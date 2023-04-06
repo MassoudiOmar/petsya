@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "849827132847",
+    "project_id": "petsya",
+    "storage_bucket": "petsya.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:849827132847:android:0a4826a7fd2d555db26b5a",
+        "android_client_info": {
+          "package_name": "com.omario.petsya"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "849827132847-putji8ql6so7k96to9hf9pic2e2l4vtj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcPMs7ed1j9CJ8ZjC-o_VK8YO_90fZ6Sk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "849827132847-putji8ql6so7k96to9hf9pic2e2l4vtj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
