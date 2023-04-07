@@ -10,8 +10,10 @@ import {
 import { Feather } from "@expo/vector-icons";
 import axios from "axios";
 import Ip from "../IP";
+import { useNavigation } from "@react-navigation/native";
 
 const UserProfile = ({ route }) => {
+  const navigation = useNavigation()
   const userData = route.params;
   const [posts,setPosts]=useState()
   console.log(userData, "user");
@@ -82,8 +84,8 @@ const UserProfile = ({ route }) => {
  />
         <Text style={styles.fullName}>{user.fullName}</Text>
         <Text style={styles.email}>{user.email}</Text>
-        <TouchableOpacity style={styles.chatButton} onPress={handleChatPress}>
-          <Text style={styles.chatButtonText}>Chat</Text>
+        <TouchableOpacity style={styles.chatButton} onPress={()=>{navigation.navigate('ProfileEdit',userData)}}>
+          <Text style={styles.chatButtonText}>Edit Profile</Text>
         </TouchableOpacity>
         <View style={styles.postsContainer}>
           <Text style={styles.postsTitle}>Posts</Text>

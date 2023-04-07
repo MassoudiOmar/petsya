@@ -11,8 +11,10 @@ import ChatDiscussion from "./components/ChatDiscussion";
 import UserProfile from "./components/UserProfile";
 import Login from "./auth/Login";
 import Signup from "./auth/Signup";
+import NoConnection from "./auth/HundleConnexionFail";
 import AddPost from "./components/AddPost";
 import OnePost from "./components/onePost.js";
+import ProfileEdit from "./components/ProfileEdit";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -71,11 +73,17 @@ function MainStack() {
       <Stack.Screen name="UserProfile" component={UserProfile} />
       <Stack.Screen name="AddPost" component={AddPost} />
       <Stack.Screen name="OnePost" component={OnePost} />
+      <Stack.Screen name="ProfileEdit" component={ProfileEdit} />
       
       <Stack.Screen
         name="Login"
         options={{ headerShown: false }}
         component={Login}
+      />
+          <Stack.Screen
+        name="NoConnection"
+        options={{ headerShown: false }}
+        component={NoConnection}
       />
       <Stack.Screen
         name="Signup"

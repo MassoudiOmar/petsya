@@ -46,7 +46,7 @@ const MyComponent = () => {
     axios
       .post(`${Ip}/api/post/addPost/${userId}`, data)
       .then(async (result) => {
-        navigation.navigate("Home");
+       navigation.navigate("Home");
       })
       .catch((err) => {
         console.log(err);

@@ -12,6 +12,7 @@ import axios from "axios";
 import Ip from "../IP";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import AwesomeAlert from "react-native-awesome-alerts";
+import NetInfo from "@react-native-community/netinfo";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -19,6 +20,13 @@ const Login = () => {
   const [Alert, setAlert] = useState(false);
   const [message, setMessage] = useState("");
   const navigation = useNavigation();
+
+  const unsubscribe = NetInfo.addEventListener((state) => {
+    state.isConnected ? null : navigation.navigate("NoConnection");
+  });
+
+  unsubscribe();
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -43,7 +51,7 @@ const Login = () => {
     axios
       .post(`${Ip}/api/users/login`, data)
       .then((result) => {
-        console.log(result.data)
+        console.log(result.data);
         result.data.message == "login succssefull"
           ? handleSuccess(result.data.message, result.data.UsertokenInfo)
           : handleFailed(result.data);
@@ -61,10 +69,9 @@ const Login = () => {
     });
   };
   const handleFailed = (message) => {
-    console.log(message)
+    console.log(message);
     setMessage(message);
     setAlert(true); // set Alert to true to show the error message
-
   };
 
   return (

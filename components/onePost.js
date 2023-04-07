@@ -9,7 +9,6 @@ import {
   TextInput,
 } from "react-native";
 import { Feather } from "@expo/vector-icons";
-import PostComponent from "./PostComponent";
 import axios from "axios";
 import Ip from "../IP";
 
@@ -64,7 +63,7 @@ const OnePost = ({ route }) => {
     axios
       .post(`${Ip}/api/post/sendcomment/${id}/${userId}`, data)
       .then((result) => {
-        console.log(result.data);
+        console.log(result.data,'eddeded');
         setComment('')
         getComments()
       })
